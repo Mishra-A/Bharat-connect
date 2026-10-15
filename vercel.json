@@ -3,7 +3,7 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "env": {
-    "VITE_API_BASE_URL": "https://bharatconnect-api.onrender.com/api/v1"
+    "VITE_API_BASE_URL": "https://bharat-connect-1-zseg.onrender.com/api/v1"
   },
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

@@ -12,7 +12,9 @@ if not DEBUG and SECRET_KEY == "dev-only-change-this-secret-before-deploying":
     raise RuntimeError("Set DJANGO_SECRET_KEY to a strong secret when DJANGO_DEBUG=False.")
 _raw_hosts = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost")
 ALLOWED_HOSTS = [h.strip() for h in _raw_hosts.split(",") if h.strip()]
-# Allow Railway and Render auto-generated domains
+# Auto-allow all onrender.com and railway.app subdomains so URL changes don't break deploys
+ALLOWED_HOSTS += [".onrender.com", ".railway.app", ".up.railway.app"]
+# Allow Railway static URL domain if set
 RAILWAY_STATIC_URL = os.getenv("RAILWAY_STATIC_URL", "")
 if RAILWAY_STATIC_URL:
     from urllib.parse import urlparse as _urlparse
