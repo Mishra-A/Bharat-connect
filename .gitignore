@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+build/
+.venv/
+venv/
+env/
+
+# Django
+backend/.env
+backend/staticfiles/
+backend/media/
+*.log
+
+# Node
+node_modules/
+dist/
+.env.local
+.env.production.local
+
+# Keep .env.production tracked (it only has the placeholder URL, no secrets)
+!.env.production
+
+# Local reference files
+RAILWAY_ENV_VARS.txt
